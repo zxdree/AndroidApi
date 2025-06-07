@@ -100,14 +100,6 @@
         <form action="{{ route('jakets.store.web') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
-            {{-- <div class="form-group">
-                <label for="id">ID Jaket (Nomor Seri Unik):</label>
-                <input type="text" id="id" name="id" value="{{ old('id') }}" required>
-                @error('id')
-                    <span class="error-message">{{ $message }}</span>
-                @enderror
-            </div> --}}
-
             <div class="form-group">
                 <label for="nama">Nama Jaket:</label>
                 <input type="text" id="nama" name="nama" value="{{ old('nama') }}" required>
