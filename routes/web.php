@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JaketWebController;
 
 Route::get('/', function () {
-    return response()->json(['message' => 'Laravel API is working!']);
+    return response()->json([
+        'status' => 'success',
+        'message' => 'Laravel API is running on Railway 🚀'
+    ]);
 });
 
 Route::get('/jakets/create', [JaketWebController::class, 'create'])->name('jakets.create');
