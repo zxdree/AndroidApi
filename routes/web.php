@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JaketWebController;
 
-// Tampilkan form tambah jaket
+Route::get('/', function () {
+    return response()->json(['message' => 'Laravel API is working!']);
+});
+
 Route::get('/jakets/create', [JaketWebController::class, 'create'])->name('jakets.create');
 Route::post('/jakets', [JaketWebController::class, 'store'])->name('jakets.store.web');
 Route::get('/jakets', [JaketWebController::class, 'index'])->name('jakets.index'); // Opsional: untuk melihat daftar jaket
