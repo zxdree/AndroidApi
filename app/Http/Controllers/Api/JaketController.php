@@ -26,7 +26,7 @@ class JaketController extends Controller
             $jakets = Jaket::where('Authorization', $userId)
                 ->get();
         }
-        
+
         return response()->json($jakets);
     }
     public function edit($id)
@@ -49,7 +49,6 @@ class JaketController extends Controller
     {
 
         $request->validate([
-
             'nama' => 'required|string|max:255',
             'jenis' => 'required|string|max:255',
             'status' => 'required|string',
@@ -59,15 +58,15 @@ class JaketController extends Controller
         ]);
 
         Log::info('data', [$request->all()]);
-        $path = $request->file('gambar')->store('jaket_images');
+        $path = $request->file('gambar')->store('jaket_images', 'public');
         $fileName = basename($path);
 
 
         $jaket = Jaket::create([
-
             'nama' => $request->nama,
             'jenis' => $request->jenis,
             'status' => $request->status,
+            'gambar' => $fileName,
             'Authorization' => $request->header('Authorization'),
 
 

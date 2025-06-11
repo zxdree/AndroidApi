@@ -12,7 +12,7 @@ return new class extends Migration {
             $table->string('nama');
             $table->string('jenis');
             $table->string('status');
-            $table->string('gambar')->nullable(); // Kolom untuk menyimpan nama file gambar
+            $table->string('gambar'); // Kolom untuk menyimpan nama file gambar
             $table->string('Authorization')->nullable();
             $table->boolean('mine')->default(false);
             $table->timestamps();
